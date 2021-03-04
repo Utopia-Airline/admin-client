@@ -1,0 +1,26 @@
+<form class="row" [formGroup]="filterFormControls">
+  <div class="col-sm">
+    <label class="form-label" for="active-select">SORT BY</label>
+    <select class="form-control" id="active-select" formControlName="sort">
+      <option style="display:none">
+      <option value="departureTime">Newest</option>
+      <option value="seatPrice">Lowest Price</option>
+      <option value="seatPrice;Desc">Highest Price</option>
+    </select>
+  </div>
+  <div class="col-md">
+    <label class="form-label" for="origin-input">DEPARTURE AIRPORT</label>
+    <input id="origin-input" placeholder="Departure Airport" class="form-control" type="text" formControlName="origin">
+  </div>
+  <div class="col-md">
+    <label class="form-label" for="destination-input">ARRIVAL AIRPORT</label>
+    <input id="destination-input" placeholder="Arrival Airport" class="form-control" type="text"
+           formControlName="destination">
+  </div>
+  <div class="col-md">
+    <div formGroupName="departureDateRange">
+      <label class="form-label" for="departure-date-input">DEPARTURE DATE</label>
+      <input id="departure-date-input" class="form-control" type="date" formControlName="start">
+    </div>
+  </div>
+</form>

@@ -1,0 +1,51 @@
+<div [formGroup]="filterBookingForm">
+  <div class="row m-4">
+    <div class="col-md">
+      <label class="form-label" for="origin-input">Origin</label>
+      <input id="origin-input" class="form-control" type="text" formControlName="origin">
+    </div>
+    <div class="col-md">
+      <label class="form-label" for="destination-input">Destination</label>
+      <input id="destination-input" class="form-control" type="text" formControlName="destination">
+    </div>
+  </div>
+  <div class="row m-4">
+    <div class="col-sm">
+      <label class="form-label" for="active-select">Active</label>
+      <select class="form-control" id="active-select" formControlName="isActive">
+        <option style="display:none">
+        <option value="true">Active</option>
+        <option value="false">Inactive</option>
+      </select>
+    </div>
+    <div class="col-sm">
+      <label class="form-label" for="type-select">Type</label>
+      <select class="form-control" id="type-select" formControlName="type">
+        <option>ALL</option>
+        <option>USER</option>
+        <option>GUEST</option>
+      </select>
+    </div>
+    <div class="col-sm">
+      <label class="form-label" for="limit-select">Limit</label>
+      <select class="form-control" id="limit-select" formControlName="limit">
+        <option style="display:none">
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+      </select>
+    </div>
+    <div class="col-sm">
+      <label class="form-label" for="booking-sort">SORT BY</label>
+      <select class="form-control" id="booking-sort" formControlName="sort">
+        <option style="display:none">
+        <option value="departureTime">Newest</option>
+        <!--      <option value="seatPrice">Lowest Price</option>-->
+        <!--      <option value="seatPrice;Desc">Highest Price</option>-->
+      </select>
+    </div>
+  </div>
+</div>
+

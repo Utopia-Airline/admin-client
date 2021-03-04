@@ -1,0 +1,123 @@
+<div *ngIf="user" class="container" id="page">
+    <div class="row w-100">
+        <div class="col-lg-4 col-md" id="userCard">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <div *ngIf="!edit">
+                        <h2 class="card-title">{{ user.givenName }} {{ user.familyName }}</h2>
+
+                        <p class="card-title"><b>Username:</b> {{ user.username }}</p>
+                        <p class="card-title"><b>Email:</b> {{ user.email }}</p>
+                        <p class="card-title"><b>Phone:</b> {{ user.phone | phone}}</p>
+                        <p class="card-title"><b>Role:</b> {{ user.role.name }}</p>
+                    </div>
+                    <div *ngIf="edit">
+                        <form class="m-2" [formGroup]="updateUserForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="givenNameInput" formControlName="givenName"
+                                    placeholder="Enter New Given Name">
+
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="familyNameInput"
+                                    formControlName="familyName" placeholder="Enter New Family Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="usernameInput" formControlName="username"
+                                    placeholder="Enter New Username"
+                                    [ngClass]="{'is-invalid': isError && error.message.includes('Username')}">
+                                <div *ngIf="isError && error.message.includes('Username')" class="invalid-feedback">
+                                    <div>{{ error.message }}</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="emailInput" formControlName="email"
+                                    placeholder="Enter New Email"
+                                    [ngClass]="{'is-invalid': isError && error.message.includes('Email')}">
+                                <div *ngIf="isError && error.message.includes('Email')" class="invalid-feedback">
+                                    <div>{{ error.message }}</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="phoneInput" formControlName="phone"
+                                    placeholder="Enter New Phone Number"
+                                    [ngClass]="{'is-invalid': isError && error.message.includes('Phone')}">
+                                <div *ngIf="isError && error.message.includes('Phone')" class="invalid-feedback">
+                                    <div>{{ error.message }}</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="passwordInput" formControlName="password"
+                                    placeholder="Enter New Password">
+                            </div>
+                        </form>
+                    </div>
+                    <div *ngIf="this.authService.user.username != this.user.username"
+                        class="d-flex justify-content-end">
+                        <button *ngIf="!edit" type="button" class="btn btn-light" id="updateButton"
+                            (click)=toggleEdit()>Update</button>
+                        <button *ngIf="edit" type="button" class="btn btn-dark" id="submitButton"
+                            (click)=updateUser()>Submit</button>
+                        <button *ngIf="!edit" type="button" class="btn btn-dark" id="deleteButton" (click)=deleteUser()
+                            routerLink="/users">Delete</button>
+                        <button *ngIf="edit" type="button" class="btn btn-light" id="submitButton"
+                            (click)=toggleEdit()>cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md" id="userBookings">
+            <div class="list-group-item booking-item rounded">
+                <div class="main m-2">
+                    <div class="my-2">
+                        <span class="mr-2 text-center"
+                            style="background-color: white; border-radius: 0.25rem; padding: 0.25rem;"></span>
+                        <span class="font-weight-bold">Origin</span>
+                        <span> to </span>
+                        <span class="font-weight-bold">destination</span>
+                    </div>
+                    <!--            <hr class="my-4">-->
+                    <div class="d-flex booker mt-3 p-2">
+                        <div class="m-1">Booker info:</div>
+                        <div class="m-1">Given Name</div>
+                        <div class="m-1">Family Name</div>
+                        <div class="ml-auto m-1">Booking Type </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="m-3" style="max-width: 20rem;">
+                            <div class="font-weight-bold">Origin</div>
+                            <div>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-plane-departure mt-1 mr-2"></i>
+                                    <div>Departure Time</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-3 ml-auto" style="max-width: 20rem;">
+                            <div class="font-weight-bold">Destination</div>
+                            <div>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-plane-arrival mt-1 mr-2"></i>
+                                    <div>Arrival Time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--            <div class="p-2 text-center">Total travel time</div>-->
+
+
+                </div>
+                <div class="reserved ">
+                    <div>
+                        Active Status
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-spinner *ngIf="!user && !isError"></app-spinner>
+<app-error-message *ngIf="!user && isError" [error]="error"></app-error-message>

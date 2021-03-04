@@ -1,0 +1,58 @@
+<!--<div>form value: {{bForm.value | json}}</div>-->
+<!--<div>booking value: {{booking | json}}</div>-->
+<form [formGroup]="bForm">
+
+  <label>
+    <input class="form-control" type="checkbox" placeholder="isActive" formControlName="isActive">
+  </label>
+  <div formArrayName="passengers">
+    <div class="list-group m-3" *ngFor="let passenger of getPassengersForms().controls; let i=index"
+         [formGroupName]="i">
+      <div class="list-group-item booking-item rounded">
+        <div class="form-group">
+          <div class="d-inline" formGroupName="name">
+            <label class="m-2">
+              Firstname<input formControlName="given" class="form-control" type="text" placeholder="Firstname">
+            </label>
+            <label class="m-2">
+              Lastname<input formControlName="family" class="form-control" type="text" placeholder="Lastname">
+            </label>
+          </div>
+          <label class="m-2"><input class="form-control" type="text" placeholder="Date of Birth" formControlName="dob"></label>
+          <label class="m-2"><input class="form-control" type="text" placeholder="Gender"
+                                    formControlName="gender"></label>
+          <label class="m-2"><input class="form-control" size="255" type="text" placeholder="Address"
+                                    formControlName="address"></label>
+          <button type="button" class="btn btn-danger m-2" (click)="deletePassengerForm(i)">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="button" style="max-width: 400px" (click)="addPassengerForm()"
+              class="btn btn-dark btn-lg btn-block m-5">Add Passenger
+      </button>
+    </div>
+  </div>
+  <div formArrayName="flights">
+    <div class="list-group m-3" *ngFor="let flight of getFlightsForms().controls; let i=index"
+         [formGroupName]="i">
+      <div class="list-group-item booking-item rounded">
+        <div class="form-group">
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="button" style="max-width: 400px" (click)="addFlightForm()"
+              class="btn btn-dark btn-lg btn-block m-5">Add Flight
+      </button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button type="button" style="max-width: 400px"
+            class="btn btn-dark btn-lg btn-block m-5">Submit
+    </button>
+  </div>
+</form>
+
+
+

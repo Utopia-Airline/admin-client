@@ -1,0 +1,119 @@
+{
+    "total": 3,
+    "results": [
+        {
+            "id": 1,
+            "type": "GUEST",
+            "isActive": true,
+            "passengers": [
+                {
+                    "name": {
+                        "given": "Test",
+                        "family": "One"
+                    },
+                    "dob": "1-1-1998",
+                    "gender": "Male",
+                    "address": "1123 Test Street 12345 Austin, Tx"
+                }
+            ],
+            "flights": [
+                {
+                    "id": 1,
+                    "route": {
+                        "id": 1,
+                        "origin": {
+                            "iataId": "ATX",
+                            "city": "Austin"
+                        },
+                        "destination": {
+                            "iataId": "LAX",
+                            "city": "Los Angeles"
+                        }
+                    },
+                    "departureTime": "2021-3-25",
+                    "maxCapacity": 30,
+                    "reservedSeats": 3,
+                    "passengerCount": 1,
+                    "availableSeats": 26,
+                    "seatPrice": 150
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "GUEST",
+            "isActive": true,
+            "passengers": [
+                {
+                    "name": {
+                        "given": "Test",
+                        "family": "Two"
+                    },
+                    "dob": "6-1-1994",
+                    "gender": "Male",
+                    "address": "1242 Test Avenue 12220 Los Angeles, CA"
+                }
+            ],
+            "flights": [
+                {
+                    "id": 2,
+                    "route": {
+                        "id": 2,
+                        "origin": {
+                            "iataId": "LAX",
+                            "city": "Los Angeles"
+                        },
+                        "destination": {
+                            "iataId": "ATX",
+                            "city": "Austin"
+                        }
+                    },
+                    "departureTime": "2021-4-2",
+                    "maxCapacity": 30,
+                    "reservedSeats": 3,
+                    "passengerCount": 1,
+                    "availableSeats": 26,
+                    "seatPrice": 150
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "GUEST",
+            "isActive": true,
+            "passengers": [
+                {
+                    "name": {
+                        "given": "Test",
+                        "family": "One"
+                    },
+                    "dob": "1-1-1998",
+                    "gender": "Male",
+                    "address": "1123 Test Street 12345 Austin, Tx"
+                }
+            ],
+            "flights": [
+                {
+                    "id": 2,
+                    "route": {
+                        "id": 2,
+                        "origin": {
+                            "iataId": "LAX",
+                            "city": "Los Angeles"
+                        },
+                        "destination": {
+                            "iataId": "ATX",
+                            "city": "Austin"
+                        }
+                    },
+                    "departureTime": "2021-4-5",
+                    "maxCapacity": 30,
+                    "reservedSeats": 3,
+                    "passengerCount": 1,
+                    "availableSeats": 26,
+                    "seatPrice": 150
+                }
+            ]
+        }
+    ]
+}

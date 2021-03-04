@@ -1,0 +1,24 @@
+<div class="user-profile full-page" *ngIf="authService.isLoggedIn">
+  <div class="pic">
+    <i class="fab fa-buffer text-gray-dark" style="font-size: 100px;"></i>
+
+  </div>
+  <div>
+    <h4 class="m-2 text-gray-dark">{{authService.user?.givenName.toUpperCase()}} {{authService.user?.familyName.toUpperCase()}}</h4>
+    <div class="d-flex align-items-center m-2 text-gray-light">
+      <div class="d-flex m-2 align-items-center">
+        <i class="fas fa-envelope mr-1 mt-1"></i>
+        <div>{{authService.user?.email}}</div>
+      </div>
+      <div class="d-flex m-2 align-items-center">
+        <i class="fas fa-user mr-1"></i>
+        <div class="d-inline">{{authService.user?.role?.name}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="user-tasks" *ngIf="authService.isLoggedIn">
+  <div class="h2"> There is no active task for today</div>
+</div>
+

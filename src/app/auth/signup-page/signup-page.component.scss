@@ -1,0 +1,24 @@
+.signup-page {
+  background-color : #F7F7F8;
+  display          : flex;
+  flex-direction   : column;
+  justify-content  : flex-start;
+  align-items      : center;
+  height           : calc(200vh - 64px);
+  .logo {
+    margin : 175px auto 25px;
+  }
+
+  .signup-form {
+    width            : 100%;
+    margin           : 0 auto 75px;
+    background-color : #ffffff;
+    padding          : 55px;
+    height           : 700px;
+    box-shadow       : rgb(194, 194, 194) 0 1px 2px;
+    @media screen and(min-width : 1000px) {
+      width : 45%;
+    }
+  }
+
+}

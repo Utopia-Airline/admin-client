@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">Utopia Airline</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/users">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/flights">Flights</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/bookings">Bookings</a>
+      </li>
+    </ul>
+    <div class="nav-item dropdown m-3">
+      <a class="nav-link dropdown-toggle h5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        {{this.authService.user?.username}}
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" routerLink="/">My Profile</a>
+        <a class="dropdown-item disabled" href="#">Account Setting</a>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" (click)="logout()">Log out</button>
+      </div>
+    </div>
+  </div>
+</nav>

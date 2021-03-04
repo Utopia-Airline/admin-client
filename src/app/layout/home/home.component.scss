@@ -1,0 +1,110 @@
+.header {
+  position         : absolute;
+  top              : 0; left : 0; right : 0;
+  height           : 100px;
+  background-color : #343A40;
+  color            : #EBEBF0;
+  padding          : 20px;
+  font-size        : 44px;
+  font-weight      : bold;
+  line-height      : 46px;
+  display          : flex;
+}
+
+.home-form {
+  display        : flex;
+  flex-direction : column;
+
+  .login-form-wrapper {
+    width  : 100%;
+    margin : 150px 0 0;
+
+    .admin-portal {
+      font-size     : 34px;
+      font-weight   : bold;
+      line-height   : 46px;
+      text-align    : center;
+      margin-bottom : 20px;
+
+    }
+
+    .login-form {
+      background-color : #ffffff;
+      padding          : 55px;
+      height           : 500px;
+      box-shadow       : rgb(194, 194, 194) 0 1px 2px;
+
+    }
+
+    @media screen and(min-width : 1000px) {
+      width       : 45%;
+      margin-left : auto;
+      .admin-portal {
+        color : #EBEBF0;
+      }
+    }
+  }
+
+
+  .welcome-utopia {
+    flex        : 1;
+    padding     : 50px 20px 20px;
+    font-size   : 34px;
+    font-weight : bold;
+    line-height : 46px;
+
+    div {
+      display : none;
+    }
+  }
+
+  @media screen and(min-width : 1300px) {
+    .welcome-utopia {
+      font-size : 44px;
+
+      div {
+        display : block;
+      }
+    }
+  }
+  @media screen and(min-width : 1000px) {
+    flex-direction : row;
+    .welcome-utopia {
+      padding : 355px 20px 20px;
+      color   : #EBEBF0;
+
+      div {
+        display : block;
+      }
+    }
+  }
+}
+
+
+.airplane-hero {
+  position   : absolute;
+  top        : 0; left : 0; right : 0;
+  margin-top : 100px;
+  z-index    : -1;
+
+  svg {display : none;}
+
+  @media screen and(min-width : 1000px) {
+    svg {
+      display : block;
+    }
+  }
+
+}
+
+.page-long {
+  min-height : 500vh;
+  @media screen and(min-height : 600px) {
+    min-height : 200vh;
+  }
+  @media screen and(min-height : 1100px) {
+    min-height : 120vh;
+  }
+
+}
+

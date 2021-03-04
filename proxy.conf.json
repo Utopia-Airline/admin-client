@@ -1,0 +1,26 @@
+{
+  "/api/session/admin": {
+    "target": "http://localhost:8081/",
+    "secure": false
+  },
+  "/api/session": {
+    "target": "http://localhost:8081/",
+    "secure": false
+  },
+  "/api/bookings": {
+    "target": "http://localhost:3000/",
+    "secure": false
+  },
+  "/api/passengers": {
+    "target": "http://localhost:3000/",
+    "secure": false
+  },
+  "/api/users": {
+    "target": "http://localhost:8081/",
+    "secure": false
+  },
+  "/api/flights": {
+    "target": "http://localhost:3001/",
+    "secure": false
+  }
+}

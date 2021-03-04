@@ -1,0 +1,1687 @@
+{
+  "total": 40,
+  "offset": 0,
+  "count": 40,
+  "results": [
+    {
+      "id": 1,
+      "departureTime": "2020-10-01T07:14:52.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 45,
+        "origin": {
+          "iataId": "SOU",
+          "name": "Southampton Airport",
+          "city": "Southampton",
+          "country": "United Kingdom",
+          "timezone": 0,
+          "coords": {
+            "latitude": -1,
+            "longitude": 51,
+            "altitude": 44
+          }
+        },
+        "destination": {
+          "iataId": "KLU",
+          "name": "Klagenfurt Airport",
+          "city": "Klagenfurt",
+          "country": "Austria",
+          "timezone": 1,
+          "coords": {
+            "latitude": 14,
+            "longitude": 47,
+            "altitude": 1472
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 18,
+        "booked": 0,
+        "available": 132,
+        "price": 353.77
+      }
+    },
+    {
+      "id": 2,
+      "departureTime": "2021-01-06T09:08:07.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 376,
+        "origin": {
+          "iataId": "FXE",
+          "name": "Fort Lauderdale Executive Airport",
+          "city": "Fort Lauderdale",
+          "country": "United States",
+          "timezone": -5,
+          "coords": {
+            "latitude": -80,
+            "longitude": 26,
+            "altitude": 13
+          }
+        },
+        "destination": {
+          "iataId": "YYH",
+          "name": "Taloyoak Airport",
+          "city": "Spence Bay",
+          "country": "Canada",
+          "timezone": -7,
+          "coords": {
+            "latitude": -94,
+            "longitude": 70,
+            "altitude": 92
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 12,
+        "booked": 1,
+        "available": 137,
+        "price": 201.26
+      }
+    },
+    {
+      "id": 3,
+      "departureTime": "2020-12-31T16:21:03.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 252,
+        "origin": {
+          "iataId": "HDR",
+          "name": "Havadarya Airport",
+          "city": "Bandar Abbas",
+          "country": "Iran",
+          "timezone": 4,
+          "coords": {
+            "latitude": 56,
+            "longitude": 27,
+            "altitude": 19
+          }
+        },
+        "destination": {
+          "iataId": "BYP",
+          "name": "Barimunya Airport",
+          "city": "Barimunya",
+          "country": "Australia",
+          "timezone": 8,
+          "coords": {
+            "latitude": 119,
+            "longitude": -23,
+            "altitude": 2082
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 14,
+        "booked": 2,
+        "available": 134,
+        "price": 353.71
+      }
+    },
+    {
+      "id": 4,
+      "departureTime": "2020-05-22T19:25:24.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 166,
+        "origin": {
+          "iataId": "TGR",
+          "name": "Touggourt Sidi Madhi Airport",
+          "city": "Touggourt",
+          "country": "Algeria",
+          "timezone": 1,
+          "coords": {
+            "latitude": 6,
+            "longitude": 33,
+            "altitude": 279
+          }
+        },
+        "destination": {
+          "iataId": "NVT",
+          "name": "Ministro Victor Konder International Airport",
+          "city": "Navegantes",
+          "country": "Brazil",
+          "timezone": -3,
+          "coords": {
+            "latitude": -49,
+            "longitude": -27,
+            "altitude": 18
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 15,
+        "booked": 3,
+        "available": 132,
+        "price": 374.44
+      }
+    },
+    {
+      "id": 5,
+      "departureTime": "2020-04-21T15:35:39.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 898,
+        "origin": {
+          "iataId": "FDH",
+          "name": "Friedrichshafen Airport",
+          "city": "Friedrichshafen",
+          "country": "Germany",
+          "timezone": 1,
+          "coords": {
+            "latitude": 10,
+            "longitude": 48,
+            "altitude": 1367
+          }
+        },
+        "destination": {
+          "iataId": "ULO",
+          "name": "Ulaangom Airport",
+          "city": "Ulaangom",
+          "country": "Mongolia",
+          "timezone": 7,
+          "coords": {
+            "latitude": 92,
+            "longitude": 50,
+            "altitude": 0
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 4,
+        "booked": 1,
+        "available": 145,
+        "price": 226.09
+      }
+    },
+    {
+      "id": 6,
+      "departureTime": "2020-06-10T13:15:59.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 262,
+        "origin": {
+          "iataId": "ODB",
+          "name": "Córdoba Airport",
+          "city": "Cordoba",
+          "country": "Spain",
+          "timezone": 1,
+          "coords": {
+            "latitude": -5,
+            "longitude": 38,
+            "altitude": 297
+          }
+        },
+        "destination": {
+          "iataId": "TKA",
+          "name": "Talkeetna Airport",
+          "city": "Talkeetna",
+          "country": "United States",
+          "timezone": -9,
+          "coords": {
+            "latitude": -150,
+            "longitude": 62,
+            "altitude": 358
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 8,
+        "booked": 5,
+        "available": 137,
+        "price": 266.55
+      }
+    },
+    {
+      "id": 7,
+      "departureTime": "2020-07-10T09:35:08.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 690,
+        "origin": {
+          "iataId": "MKC",
+          "name": "Charles B. Wheeler Downtown Airport",
+          "city": "Kansas City",
+          "country": "United States",
+          "timezone": -6,
+          "coords": {
+            "latitude": -95,
+            "longitude": 39,
+            "altitude": 759
+          }
+        },
+        "destination": {
+          "iataId": "CIH",
+          "name": "Changzhi Airport",
+          "city": "Changzhi",
+          "country": "China",
+          "timezone": 8,
+          "coords": {
+            "latitude": 113,
+            "longitude": 36,
+            "altitude": 0
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 15,
+        "booked": 0,
+        "available": 135,
+        "price": 365.19
+      }
+    },
+    {
+      "id": 8,
+      "departureTime": "2020-04-12T18:32:53.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 235,
+        "origin": {
+          "iataId": "TTL",
+          "name": "Turtle Island Seaplane Base",
+          "city": "Turtle Island",
+          "country": "Fiji",
+          "timezone": 12,
+          "coords": {
+            "latitude": 177,
+            "longitude": -17,
+            "altitude": 0
+          }
+        },
+        "destination": {
+          "iataId": "MFE",
+          "name": "Mc Allen Miller International Airport",
+          "city": "Mcallen",
+          "country": "United States",
+          "timezone": -6,
+          "coords": {
+            "latitude": -98,
+            "longitude": 26,
+            "altitude": 107
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 14,
+        "booked": 0,
+        "available": 136,
+        "price": 276.78
+      }
+    },
+    {
+      "id": 9,
+      "departureTime": "2020-10-02T22:19:02.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 536,
+        "origin": {
+          "iataId": "SGZ",
+          "name": "Songkhla Airport",
+          "city": "Songkhla",
+          "country": "Thailand",
+          "timezone": 7,
+          "coords": {
+            "latitude": 101,
+            "longitude": 7,
+            "altitude": 12
+          }
+        },
+        "destination": {
+          "iataId": "INV",
+          "name": "Inverness Airport",
+          "city": "Inverness",
+          "country": "United Kingdom",
+          "timezone": 0,
+          "coords": {
+            "latitude": -4,
+            "longitude": 58,
+            "altitude": 31
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 8,
+        "booked": 0,
+        "available": 142,
+        "price": 388.43
+      }
+    },
+    {
+      "id": 10,
+      "departureTime": "2020-12-16T02:26:03.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 958,
+        "origin": {
+          "iataId": "SVB",
+          "name": "Sambava Airport",
+          "city": "Sambava",
+          "country": "Madagascar",
+          "timezone": 3,
+          "coords": {
+            "latitude": 50,
+            "longitude": -14,
+            "altitude": 20
+          }
+        },
+        "destination": {
+          "iataId": "RYK",
+          "name": "Shaikh Zaid Airport",
+          "city": "Rahim Yar Khan",
+          "country": "Pakistan",
+          "timezone": 5,
+          "coords": {
+            "latitude": 70,
+            "longitude": 28,
+            "altitude": 271
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 4,
+        "booked": 0,
+        "available": 146,
+        "price": 240.39
+      }
+    },
+    {
+      "id": 11,
+      "departureTime": "2020-04-11T06:25:17.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 932,
+        "origin": {
+          "iataId": "HUH",
+          "name": "Huahine-Fare Airport",
+          "city": "Huahine Island",
+          "country": "French Polynesia",
+          "timezone": -10,
+          "coords": {
+            "latitude": -151,
+            "longitude": -17,
+            "altitude": 7
+          }
+        },
+        "destination": {
+          "iataId": "HPB",
+          "name": "Hooper Bay Airport",
+          "city": "Hooper Bay",
+          "country": "United States",
+          "timezone": -9,
+          "coords": {
+            "latitude": -166,
+            "longitude": 62,
+            "altitude": 13
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 11,
+        "booked": 0,
+        "available": 139,
+        "price": 201.95
+      }
+    },
+    {
+      "id": 12,
+      "departureTime": "2020-03-24T00:26:40.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 798,
+        "origin": {
+          "iataId": "TUK",
+          "name": "Turbat International Airport",
+          "city": "Turbat",
+          "country": "Pakistan",
+          "timezone": 5,
+          "coords": {
+            "latitude": 63,
+            "longitude": 26,
+            "altitude": 498
+          }
+        },
+        "destination": {
+          "iataId": "ZAT",
+          "name": "Zhaotong Airport",
+          "city": "Zhaotong",
+          "country": "China",
+          "timezone": 8,
+          "coords": {
+            "latitude": 104,
+            "longitude": 27,
+            "altitude": 0
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 19,
+        "booked": 0,
+        "available": 131,
+        "price": 275.29
+      }
+    },
+    {
+      "id": 13,
+      "departureTime": "2020-09-07T14:20:29.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 552,
+        "origin": {
+          "iataId": "GRI",
+          "name": "Central Nebraska Regional Airport",
+          "city": "Grand Island",
+          "country": "United States",
+          "timezone": -6,
+          "coords": {
+            "latitude": -98,
+            "longitude": 41,
+            "altitude": 1847
+          }
+        },
+        "destination": {
+          "iataId": "YQV",
+          "name": "Yorkton Municipal Airport",
+          "city": "Yorkton",
+          "country": "Canada",
+          "timezone": -6,
+          "coords": {
+            "latitude": -102,
+            "longitude": 51,
+            "altitude": 1635
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 11,
+        "booked": 9,
+        "available": 130,
+        "price": 365.59
+      }
+    },
+    {
+      "id": 14,
+      "departureTime": "2021-01-10T04:31:48.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 564,
+        "origin": {
+          "iataId": "BOD",
+          "name": "Bordeaux-Mérignac Airport",
+          "city": "Bordeaux",
+          "country": "France",
+          "timezone": 1,
+          "coords": {
+            "latitude": -1,
+            "longitude": 45,
+            "altitude": 162
+          }
+        },
+        "destination": {
+          "iataId": "NOS",
+          "name": "Fascene Airport",
+          "city": "Nosy-be",
+          "country": "Madagascar",
+          "timezone": 3,
+          "coords": {
+            "latitude": 48,
+            "longitude": -13,
+            "altitude": 36
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 4,
+        "booked": 2,
+        "available": 144,
+        "price": 298.43
+      }
+    },
+    {
+      "id": 15,
+      "departureTime": "2020-12-15T03:59:29.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 75,
+        "origin": {
+          "iataId": "WIL",
+          "name": "Nairobi Wilson Airport",
+          "city": "Nairobi",
+          "country": "Kenya",
+          "timezone": 3,
+          "coords": {
+            "latitude": 37,
+            "longitude": -1,
+            "altitude": 5536
+          }
+        },
+        "destination": {
+          "iataId": "ZTB",
+          "name": "Tête-à-la-Baleine Airport",
+          "city": "Tête-à-la-Baleine",
+          "country": "Canada",
+          "timezone": -4,
+          "coords": {
+            "latitude": -59,
+            "longitude": 51,
+            "altitude": 107
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 3,
+        "booked": 3,
+        "available": 144,
+        "price": 209.71
+      }
+    },
+    {
+      "id": 16,
+      "departureTime": "2021-02-27T21:15:55.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 900,
+        "origin": {
+          "iataId": "AND",
+          "name": "Anderson Regional Airport",
+          "city": "Andersen",
+          "country": "United States",
+          "timezone": -5,
+          "coords": {
+            "latitude": -83,
+            "longitude": 34,
+            "altitude": 782
+          }
+        },
+        "destination": {
+          "iataId": "DNA",
+          "name": "Kadena Air Base",
+          "city": "Kadena",
+          "country": "Japan",
+          "timezone": 9,
+          "coords": {
+            "latitude": 128,
+            "longitude": 26,
+            "altitude": 143
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 4,
+        "booked": 0,
+        "available": 146,
+        "price": 246.5
+      }
+    },
+    {
+      "id": 17,
+      "departureTime": "2020-11-16T07:19:26.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 938,
+        "origin": {
+          "iataId": "UTP",
+          "name": "U-Tapao International Airport",
+          "city": "Pattaya",
+          "country": "Thailand",
+          "timezone": 7,
+          "coords": {
+            "latitude": 101,
+            "longitude": 13,
+            "altitude": 42
+          }
+        },
+        "destination": {
+          "iataId": "HUS",
+          "name": "Hughes Airport",
+          "city": "Hughes",
+          "country": "United States",
+          "timezone": -9,
+          "coords": {
+            "latitude": -154,
+            "longitude": 66,
+            "altitude": 299
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 2,
+        "booked": 0,
+        "available": 148,
+        "price": 387.29
+      }
+    },
+    {
+      "id": 18,
+      "departureTime": "2020-06-02T11:39:46.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 386,
+        "origin": {
+          "iataId": "TMR",
+          "name": "Aguenar – Hadj Bey Akhamok Airport",
+          "city": "Tamanrasset",
+          "country": "Algeria",
+          "timezone": 1,
+          "coords": {
+            "latitude": 5,
+            "longitude": 23,
+            "altitude": 4518
+          }
+        },
+        "destination": {
+          "iataId": "BFK",
+          "name": "Buckley Air Force Base",
+          "city": "Buckley",
+          "country": "United States",
+          "timezone": -7,
+          "coords": {
+            "latitude": -105,
+            "longitude": 40,
+            "altitude": 5662
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 20,
+        "booked": 3,
+        "available": 127,
+        "price": 266.67
+      }
+    },
+    {
+      "id": 19,
+      "departureTime": "2020-12-23T11:51:26.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 228,
+        "origin": {
+          "iataId": "KOQ",
+          "name": "Köthen Airport",
+          "city": "Koethen",
+          "country": "Germany",
+          "timezone": 1,
+          "coords": {
+            "latitude": 12,
+            "longitude": 52,
+            "altitude": 305
+          }
+        },
+        "destination": {
+          "iataId": "BCO",
+          "name": "Baco Airport",
+          "city": "Baco",
+          "country": "Ethiopia",
+          "timezone": 3,
+          "coords": {
+            "latitude": 37,
+            "longitude": 6,
+            "altitude": 4580
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 12,
+        "booked": 4,
+        "available": 134,
+        "price": 393.05
+      }
+    },
+    {
+      "id": 20,
+      "departureTime": "2020-04-01T04:37:51.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 684,
+        "origin": {
+          "iataId": "PQC",
+          "name": "Phu Quoc International Airport",
+          "city": "Phuquoc",
+          "country": "Vietnam",
+          "timezone": 7,
+          "coords": {
+            "latitude": 104,
+            "longitude": 10,
+            "altitude": 37
+          }
+        },
+        "destination": {
+          "iataId": "TIE",
+          "name": "Tippi Airport",
+          "city": "Tippi",
+          "country": "Ethiopia",
+          "timezone": 3,
+          "coords": {
+            "latitude": 35,
+            "longitude": 7,
+            "altitude": 1100
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 7,
+        "booked": 1,
+        "available": 142,
+        "price": 308.75
+      }
+    },
+    {
+      "id": 21,
+      "departureTime": "2020-12-23T04:07:50.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 227,
+        "origin": {
+          "iataId": "CAK",
+          "name": "Akron Canton Regional Airport",
+          "city": "Akron",
+          "country": "United States",
+          "timezone": -5,
+          "coords": {
+            "latitude": -81,
+            "longitude": 41,
+            "altitude": 1228
+          }
+        },
+        "destination": {
+          "iataId": "BRW",
+          "name": "Wiley Post Will Rogers Memorial Airport",
+          "city": "Barrow",
+          "country": "United States",
+          "timezone": -9,
+          "coords": {
+            "latitude": -157,
+            "longitude": 71,
+            "altitude": 44
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 18,
+        "booked": 10,
+        "available": 122,
+        "price": 391.53
+      }
+    },
+    {
+      "id": 22,
+      "departureTime": "2020-02-18T07:04:22.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 560,
+        "origin": {
+          "iataId": "BIY",
+          "name": "Bisho Airport",
+          "city": "Bisho",
+          "country": "South Africa",
+          "timezone": 2,
+          "coords": {
+            "latitude": 27,
+            "longitude": -33,
+            "altitude": 1950
+          }
+        },
+        "destination": {
+          "iataId": "WTN",
+          "name": "RAF Waddington",
+          "city": "Waddington",
+          "country": "United Kingdom",
+          "timezone": 0,
+          "coords": {
+            "latitude": -1,
+            "longitude": 53,
+            "altitude": 231
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 19,
+        "booked": 2,
+        "available": 129,
+        "price": 264.47
+      }
+    },
+    {
+      "id": 23,
+      "departureTime": "2020-05-20T06:52:25.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 837,
+        "origin": {
+          "iataId": "GNS",
+          "name": "Binaka Airport",
+          "city": "Gunung Sitoli",
+          "country": "Indonesia",
+          "timezone": 7,
+          "coords": {
+            "latitude": 98,
+            "longitude": 1,
+            "altitude": 20
+          }
+        },
+        "destination": {
+          "iataId": "KSC",
+          "name": "Košice Airport",
+          "city": "Kosice",
+          "country": "Slovakia",
+          "timezone": 1,
+          "coords": {
+            "latitude": 21,
+            "longitude": 49,
+            "altitude": 755
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 7,
+        "booked": 3,
+        "available": 140,
+        "price": 361.88
+      }
+    },
+    {
+      "id": 24,
+      "departureTime": "2021-03-15T00:42:58.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 185,
+        "origin": {
+          "iataId": "LID",
+          "name": "Valkenburg Naval Air Base",
+          "city": "Valkenburg",
+          "country": "Netherlands",
+          "timezone": 1,
+          "coords": {
+            "latitude": 4,
+            "longitude": 52,
+            "altitude": 1
+          }
+        },
+        "destination": {
+          "iataId": "AKC",
+          "name": "Akron Fulton International Airport",
+          "city": "Akron",
+          "country": "United States",
+          "timezone": -5,
+          "coords": {
+            "latitude": -81,
+            "longitude": 41,
+            "altitude": 1067
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 2,
+        "booked": 1,
+        "available": 147,
+        "price": 338.22
+      }
+    },
+    {
+      "id": 25,
+      "departureTime": "2020-05-16T16:12:09.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 837,
+        "origin": {
+          "iataId": "GNS",
+          "name": "Binaka Airport",
+          "city": "Gunung Sitoli",
+          "country": "Indonesia",
+          "timezone": 7,
+          "coords": {
+            "latitude": 98,
+            "longitude": 1,
+            "altitude": 20
+          }
+        },
+        "destination": {
+          "iataId": "KSC",
+          "name": "Košice Airport",
+          "city": "Kosice",
+          "country": "Slovakia",
+          "timezone": 1,
+          "coords": {
+            "latitude": 21,
+            "longitude": 49,
+            "altitude": 755
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 17,
+        "booked": 3,
+        "available": 130,
+        "price": 299.52
+      }
+    },
+    {
+      "id": 26,
+      "departureTime": "2020-11-17T06:47:59.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 799,
+        "origin": {
+          "iataId": "SID",
+          "name": "Amílcar Cabral International Airport",
+          "city": "Amilcar Cabral",
+          "country": "Cape Verde",
+          "timezone": -1,
+          "coords": {
+            "latitude": -23,
+            "longitude": 17,
+            "altitude": 177
+          }
+        },
+        "destination": {
+          "iataId": "SQH",
+          "name": "Na-San Airport",
+          "city": "Son-La",
+          "country": "Vietnam",
+          "timezone": 7,
+          "coords": {
+            "latitude": 104,
+            "longitude": 21,
+            "altitude": 2133
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 1,
+        "booked": 3,
+        "available": 146,
+        "price": 279.59
+      }
+    },
+    {
+      "id": 27,
+      "departureTime": "2020-09-14T11:26:55.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 940,
+        "origin": {
+          "iataId": "TMH",
+          "name": "Tanah Merah Airport",
+          "city": "Boven Digoel",
+          "country": "Indonesia",
+          "timezone": 9,
+          "coords": {
+            "latitude": 140,
+            "longitude": -6,
+            "altitude": 57
+          }
+        },
+        "destination": {
+          "iataId": "LPA",
+          "name": "Gran Canaria Airport",
+          "city": "Gran Canaria",
+          "country": "Spain",
+          "timezone": 0,
+          "coords": {
+            "latitude": -15,
+            "longitude": 28,
+            "altitude": 78
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 12,
+        "booked": 1,
+        "available": 137,
+        "price": 291.82
+      }
+    },
+    {
+      "id": 28,
+      "departureTime": "2021-03-15T21:08:49.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 148,
+        "origin": {
+          "iataId": "YIF",
+          "name": "St Augustin Airport",
+          "city": "St-Augustin",
+          "country": "Canada",
+          "timezone": -4,
+          "coords": {
+            "latitude": -59,
+            "longitude": 51,
+            "altitude": 20
+          }
+        },
+        "destination": {
+          "iataId": "UTM",
+          "name": "Tunica Municipal Airport",
+          "city": "Tunica",
+          "country": "United States",
+          "timezone": -6,
+          "coords": {
+            "latitude": -90,
+            "longitude": 35,
+            "altitude": 194
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 15,
+        "booked": 0,
+        "available": 135,
+        "price": 284.88
+      }
+    },
+    {
+      "id": 29,
+      "departureTime": "2021-03-17T01:39:33.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 376,
+        "origin": {
+          "iataId": "FXE",
+          "name": "Fort Lauderdale Executive Airport",
+          "city": "Fort Lauderdale",
+          "country": "United States",
+          "timezone": -5,
+          "coords": {
+            "latitude": -80,
+            "longitude": 26,
+            "altitude": 13
+          }
+        },
+        "destination": {
+          "iataId": "YYH",
+          "name": "Taloyoak Airport",
+          "city": "Spence Bay",
+          "country": "Canada",
+          "timezone": -7,
+          "coords": {
+            "latitude": -94,
+            "longitude": 70,
+            "altitude": 92
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 7,
+        "booked": 0,
+        "available": 143,
+        "price": 215.05
+      }
+    },
+    {
+      "id": 30,
+      "departureTime": "2020-11-25T01:34:11.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 694,
+        "origin": {
+          "iataId": "SYW",
+          "name": "Sehwan Sharif Airport",
+          "city": "Sehwan Sharif",
+          "country": "Pakistan",
+          "timezone": 5,
+          "coords": {
+            "latitude": 68,
+            "longitude": 26,
+            "altitude": 121
+          }
+        },
+        "destination": {
+          "iataId": "MKR",
+          "name": "Meekatharra Airport",
+          "city": "Meekatharra",
+          "country": "Australia",
+          "timezone": 8,
+          "coords": {
+            "latitude": 119,
+            "longitude": -27,
+            "altitude": 1713
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 7,
+        "booked": 0,
+        "available": 143,
+        "price": 370.72
+      }
+    },
+    {
+      "id": 31,
+      "departureTime": "2020-09-17T05:36:37.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 674,
+        "origin": {
+          "iataId": "CTC",
+          "name": "Catamarca Airport",
+          "city": "Catamarca",
+          "country": "Argentina",
+          "timezone": -3,
+          "coords": {
+            "latitude": -66,
+            "longitude": -29,
+            "altitude": 1522
+          }
+        },
+        "destination": {
+          "iataId": "TMU",
+          "name": "Tambor Airport",
+          "city": "Nicoya",
+          "country": "Costa Rica",
+          "timezone": -6,
+          "coords": {
+            "latitude": -85,
+            "longitude": 10,
+            "altitude": 33
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 4,
+        "booked": 0,
+        "available": 146,
+        "price": 268.03
+      }
+    },
+    {
+      "id": 32,
+      "departureTime": "2020-04-14T18:14:37.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 703,
+        "origin": {
+          "iataId": "ATH",
+          "name": "Eleftherios Venizelos International Airport",
+          "city": "Athens",
+          "country": "Greece",
+          "timezone": 2,
+          "coords": {
+            "latitude": 24,
+            "longitude": 38,
+            "altitude": 308
+          }
+        },
+        "destination": {
+          "iataId": "SBR",
+          "name": "Saibai Island Airport",
+          "city": "Saibai Island",
+          "country": "Australia",
+          "timezone": 10,
+          "coords": {
+            "latitude": 143,
+            "longitude": -9,
+            "altitude": 15
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 11,
+        "booked": 0,
+        "available": 139,
+        "price": 315.7
+      }
+    },
+    {
+      "id": 33,
+      "departureTime": "2021-03-26T04:38:50.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 965,
+        "origin": {
+          "iataId": "NOV",
+          "name": "Nova Lisboa Airport",
+          "city": "Huambo",
+          "country": "Angola",
+          "timezone": 1,
+          "coords": {
+            "latitude": 16,
+            "longitude": -13,
+            "altitude": 5587
+          }
+        },
+        "destination": {
+          "iataId": "POO",
+          "name": "Poços de Caldas - Embaixador Walther Moreira Salles Airport",
+          "city": "Pocos De Caldas",
+          "country": "Brazil",
+          "timezone": -3,
+          "coords": {
+            "latitude": -47,
+            "longitude": -22,
+            "altitude": 4135
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 17,
+        "booked": 0,
+        "available": 133,
+        "price": 287.24
+      }
+    },
+    {
+      "id": 34,
+      "departureTime": "2020-04-11T04:21:30.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 160,
+        "origin": {
+          "iataId": "PPL",
+          "name": "Phaplu Airport",
+          "city": "Phaplu",
+          "country": "Nepal",
+          "timezone": 6,
+          "coords": {
+            "latitude": 87,
+            "longitude": 28,
+            "altitude": 7918
+          }
+        },
+        "destination": {
+          "iataId": "UBJ",
+          "name": "Yamaguchi Ube Airport",
+          "city": "Yamaguchi",
+          "country": "Japan",
+          "timezone": 9,
+          "coords": {
+            "latitude": 131,
+            "longitude": 34,
+            "altitude": 23
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 7,
+        "booked": 0,
+        "available": 143,
+        "price": 213.46
+      }
+    },
+    {
+      "id": 35,
+      "departureTime": "2020-06-18T19:49:58.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 475,
+        "origin": {
+          "iataId": "ZYI",
+          "name": "Zunyi Xinzhou Airport",
+          "city": "Zunyi",
+          "country": "China",
+          "timezone": 8,
+          "coords": {
+            "latitude": 107,
+            "longitude": 28,
+            "altitude": 2920
+          }
+        },
+        "destination": {
+          "iataId": "SKD",
+          "name": "Samarkand Airport",
+          "city": "Samarkand",
+          "country": "Uzbekistan",
+          "timezone": 5,
+          "coords": {
+            "latitude": 67,
+            "longitude": 40,
+            "altitude": 2224
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 18,
+        "booked": 4,
+        "available": 128,
+        "price": 206.16
+      }
+    },
+    {
+      "id": 36,
+      "departureTime": "2020-09-22T11:45:54.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 408,
+        "origin": {
+          "iataId": "NAK",
+          "name": "Nakhon Ratchasima Airport",
+          "city": "Nakhon Ratchasima",
+          "country": "Thailand",
+          "timezone": 7,
+          "coords": {
+            "latitude": 102,
+            "longitude": 15,
+            "altitude": 765
+          }
+        },
+        "destination": {
+          "iataId": "PFB",
+          "name": "Lauro Kurtz Airport",
+          "city": "Passo Fundo",
+          "country": "Brazil",
+          "timezone": -3,
+          "coords": {
+            "latitude": -52,
+            "longitude": -28,
+            "altitude": 2376
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 19,
+        "booked": 0,
+        "available": 131,
+        "price": 281.69
+      }
+    },
+    {
+      "id": 37,
+      "departureTime": "2020-09-18T21:05:29.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 967,
+        "origin": {
+          "iataId": "LTT",
+          "name": "La Môle Airport",
+          "city": "La Môle",
+          "country": "France",
+          "timezone": 1,
+          "coords": {
+            "latitude": 6,
+            "longitude": 43,
+            "altitude": 59
+          }
+        },
+        "destination": {
+          "iataId": "GFR",
+          "name": "Granville Airport",
+          "city": "Granville",
+          "country": "France",
+          "timezone": 1,
+          "coords": {
+            "latitude": -2,
+            "longitude": 49,
+            "altitude": 45
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 2,
+        "booked": 0,
+        "available": 148,
+        "price": 252.23
+      }
+    },
+    {
+      "id": 38,
+      "departureTime": "2020-03-21T09:15:29.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 9,
+        "origin": {
+          "iataId": "MVL",
+          "name": "Morrisville Stowe State Airport",
+          "city": "Morrisville",
+          "country": "United States",
+          "timezone": -5,
+          "coords": {
+            "latitude": -73,
+            "longitude": 45,
+            "altitude": 732
+          }
+        },
+        "destination": {
+          "iataId": "YKL",
+          "name": "Schefferville Airport",
+          "city": "Schefferville",
+          "country": "Canada",
+          "timezone": -5,
+          "coords": {
+            "latitude": -67,
+            "longitude": 55,
+            "altitude": 1709
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 9,
+        "booked": 0,
+        "available": 141,
+        "price": 217.32
+      }
+    },
+    {
+      "id": 39,
+      "departureTime": "2020-08-29T07:52:41.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 516,
+        "origin": {
+          "iataId": "PDV",
+          "name": "Plovdiv International Airport",
+          "city": "Plovdiv",
+          "country": "Bulgaria",
+          "timezone": 2,
+          "coords": {
+            "latitude": 25,
+            "longitude": 42,
+            "altitude": 597
+          }
+        },
+        "destination": {
+          "iataId": "BDL",
+          "name": "Bradley International Airport",
+          "city": "Windsor Locks",
+          "country": "United States",
+          "timezone": -5,
+          "coords": {
+            "latitude": -73,
+            "longitude": 42,
+            "altitude": 173
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 15,
+        "booked": 3,
+        "available": 132,
+        "price": 342.59
+      }
+    },
+    {
+      "id": 40,
+      "departureTime": "2020-03-02T07:10:49.000Z",
+      "airplaneId": 1,
+      "route": {
+        "id": 525,
+        "origin": {
+          "iataId": "YAP",
+          "name": "Yap International Airport",
+          "city": "Yap",
+          "country": "Micronesia",
+          "timezone": 10,
+          "coords": {
+            "latitude": 138,
+            "longitude": 9,
+            "altitude": 91
+          }
+        },
+        "destination": {
+          "iataId": "BPM",
+          "name": "Begumpet Airport",
+          "city": "Hyderabad",
+          "country": "India",
+          "timezone": 6,
+          "coords": {
+            "latitude": 78,
+            "longitude": 17,
+            "altitude": 1742
+          }
+        }
+      },
+      "airplane": {
+        "id": 1
+      },
+      "seats": {
+        "total": 150,
+        "reserved": 1,
+        "booked": 0,
+        "available": 149,
+        "price": 276.06
+      }
+    }
+  ]
+}

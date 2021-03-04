@@ -1,0 +1,95 @@
+<div class="container full-page">
+  <!--search bar-->
+  <app-booking-search-form (filterChanged)="onFilterChange($event)"
+                           [bookingFilter]="filter">
+  </app-booking-search-form>
+  <!--    <div class="d-flex justify-content-center">-->
+  <!--      <button type="button" routerLink="/bookings/add"-->
+  <!--              class="btn btn-dark btn-lg btn-block m-5 " style="max-width: 500px">ADD BOOKING-->
+  <!--      </button>-->
+  <!--    </div>-->
+  <!--    booking list-->
+  <!--      list of all bookings-->
+  <ng-container *ngIf="!loading && !error.isError">
+    <div class="text-center my-3">
+      <button class="btn btn-dark" (click)="onSaveCSV()">Generate CSV Report</button>
+    </div>
+    <div class="text-center">Total: <span class="font-weight-bold">{{totalBookings}}</span></div>
+    <div class="list-group m-3" *ngFor="let booking of pagedBookings">
+      <a [routerLink]="['/bookings',booking.id]" style="text-decoration: none">
+        <div class="list-group-item booking-item rounded">
+          <div class="main m-2">
+            <div class="my-2">
+                <span class="mr-2 text-center"
+                      style="background-color: white; border-radius: 0.25rem; padding: 0.25rem;">
+                  {{booking?.id}}</span>
+              <span class="font-weight-bold">{{booking?.flights[0]?.route?.origin?.city}}</span>
+              <span *ngIf="booking.flights && booking.flights.length"> to </span>
+              <span class="font-weight-bold">{{booking?.flights.slice(-1)[0]?.route?.destination?.city}}</span>
+            </div>
+            <!--            <hr class="my-4">-->
+            <div class="d-flex booker mt-3 p-2" *ngIf="booking.type ==='USER'">
+              <div class="m-1">Booker info:</div>
+              <div class="m-1">{{booking.user?.name.given}}</div>
+              <div class="m-1">{{booking.user?.name.family}}</div>
+              <div class="ml-auto m-1">{{booking.type}} </div>
+            </div>
+            <div class="d-flex booker mt-3 p-2" *ngIf="booking.type ==='GUEST'">
+              <div class="m-1">Booker info:</div>
+              <div class="m-1">{{booking.guest?.email}}</div>
+              <div class="m-1">{{booking.guest?.phone | phone }}</div>
+              <div class="ml-auto m-1">{{booking.type}} </div>
+            </div>
+            <div class="d-flex">
+              <div class="m-3" style="max-width: 20rem;">
+                <span class="font-weight-bold">{{booking?.flights[0]?.route?.origin?.city}}, </span>
+                <span>{{booking?.flights[0]?.route?.origin?.country}} </span>
+                <span>({{booking?.flights[0]?.route?.origin?.iataId}})</span>
+                <div class="text-secondary mt-sm-1">{{booking?.flights[0]?.route?.origin?.name}}</div>
+                <div>
+                  <div class="d-flex my-3">
+                    <i class="fas fa-plane-departure mt-1 mr-2"></i>
+                    <div>{{booking?.flights[0]?.departureTime | date:'MMM d, y, h:mm a'}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="m-3 ml-auto" style="max-width: 20rem;">
+                <span class="font-weight-bold">{{booking?.flights.slice(-1)[0]?.route?.destination?.city}}, </span>
+                <span>{{booking?.flights.slice(-1)[0]?.route?.destination?.country}} </span>
+                <span>({{booking?.flights.slice(-1)[0]?.route?.destination?.iataId}})</span>
+                <div
+                  class="text-secondary mt-sm-1">{{booking?.flights.slice(-1)[0]?.route?.destination?.name}}</div>
+                <div>
+                  <div class="d-flex my-3">
+                    <i class="fas fa-plane-arrival mt-1 mr-2"></i>
+                    <div>{{booking?.flights.slice(-1)[0]?.arrivalTime | date:'MMM d, y, h:mm a'}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--            <div class="p-2 text-center">Total travel time</div>-->
+            <div class="p-2 text-center">Total Price:
+              <span class="font-weight-bold">{{booking?.totalPrice}}</span>
+            </div>
+
+          </div>
+          <div class="reserved " [ngClass]="(booking.isActive) ? 'text-success' : 'text-danger'">
+            <div>
+              {{booking.isActive ? 'Active' : 'Inactive'}}
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!--    Pagination-->
+    <div class="d-flex justify-content-center" style="margin: 150px">
+      <app-pagination *ngIf="pager.totalPages && pager.currentPage" [(currentPage)]="pager.currentPage"
+                      [totalPageCount]="pager.totalPages" [displayedPageRange]="5"
+                      (currentPageChange)="onPageChange($event)"></app-pagination>
+    </div>
+  </ng-container>
+
+  <!--Acknowledgment-->
+  <app-spinner [loading]="loading" *ngIf="loading"></app-spinner>
+  <app-error-message *ngIf="error?.isError" [error]="error"></app-error-message>
+</div>

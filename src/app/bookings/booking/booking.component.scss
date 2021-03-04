@@ -1,0 +1,128 @@
+.booking-item {
+  display : flex;
+  color   : #212529;
+  padding : 0;
+
+  .main {
+    flex    : 1;
+    padding : 0.75rem 1.25rem;
+    color   : #333333;
+
+    .booker {
+      margin           : auto;
+      background-color : white;
+      border-radius    : 0.25rem;
+      padding          : 0.25rem;
+      word-break       : break-all;
+      font-size        : 0.80rem;
+      flex-direction   : column;
+      @media screen and (min-width : 600px) {
+        font-size      : 1rem;
+        flex-direction : row;
+      }
+    }
+  }
+}
+
+
+.list-group {
+  .list-group-item {
+    border           : none;
+    background-color : #F7F7F8;
+    box-shadow       : rgb(194, 194, 194) 0 1px 2px;
+    transition       : box-shadow 0.2s linear;
+
+    &:hover, &:active, &:focus {
+      border     : 0.04rem solid rgba(0, 0, 0, 0.2);
+      box-shadow : 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+}
+
+.white-box {
+  background-color : white;
+  border-radius    : 0.25rem;
+  padding          : 0.25rem;
+}
+
+.gray-box {
+  display          : block;
+  background-color : #E6E6E6;
+  border-radius    : 0.25rem;
+  padding          : 0.45rem;
+  border           : none;
+  width            : 100%;
+  height           : calc(1.5em + 0.75rem + 2px);
+  font-size        : 1rem;
+  font-weight      : 400;
+  line-height      : 1.5;
+  background-clip  : padding-box;
+  outline          : none;
+
+  &:focus {
+    outline : none;
+  }
+}
+
+.gray-box-input {
+  //transition : border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border : 2px solid #333333;
+    //box-shadow: inset 0 1px 1px rgba(38, 14, 14, 0.07), 0 0 8px #e6a288;
+  }
+}
+
+.title {
+  font-weight : 500;
+  color       : #333333;
+}
+
+.text-light-black {
+  color : #989595;
+}
+
+.edit-toolbox {
+  * {
+    margin     : 0.313rem;
+    transition : all 0.1s linear;
+    cursor     : pointer;
+
+  }
+
+  //i {
+  //  font-size : 1.2rem;
+  //
+  //  &:hover, &:active, &:focus {
+  //    color : lighten(#333333, 30%);
+  //  }
+  //}
+}
+
+.sbtn {
+  display         : inline-block;
+  border          : none;
+  margin          : 0;
+  text-decoration : none;
+  background      : transparent;
+  font-size       : 1rem;
+  cursor          : pointer;
+  text-align      : center;
+  outline         : none;
+  box-shadow      : none;
+
+  &:hover, &:active, &:focus {
+    color : lighten(#333333, 30%);
+  }
+
+  &:disabled {
+    color : lighten(#333333, 60%);
+  }
+
+  i {
+    font-size : 1.2rem;
+
+  }
+
+}
