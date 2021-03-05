@@ -7,7 +7,7 @@
   </div>
   <app-flight-creation-modal></app-flight-creation-modal>
   <app-flight-search-form (filterChanged)="onFilterChange($event)"></app-flight-search-form>
-  <app-spinner *ngIf="flights.state==='pending'"></app-spinner>
+  <app-spinner [loading]="true" *ngIf="flights.state==='pending'"> </app-spinner>
   <ng-container *ngIf="flights.state==='done'">
     <button class="btn btn-dark my-4" (click)="onSaveCSV()">Generate a CSV report</button>
     <app-flight-result-list [flights]="flights.data.results"></app-flight-result-list>
