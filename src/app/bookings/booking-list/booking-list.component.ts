@@ -167,6 +167,8 @@ export class BookingListComponent implements OnInit {
     let url = this.buildUrl(1, this.totalBookings);
     if (!url.includes('limit')) {
       url += `&limit=${this.totalBookings}`;
+    } else {
+      url = url.replace(/&limit=(\d+)/g, `&limit=${this.totalBookings}`);
     }
     console.log('url:', url);
     this.bookingService.getAllBookings(url)
