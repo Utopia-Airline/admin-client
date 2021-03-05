@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { HttpService } from '../shared/services/http.service';
+import { UserService } from '../shared/services/user.service';
 import { AuthService } from '../shared/services/auth.service';
-import { User } from '../shared/models/user';
 import {
   FormGroup,
   FormBuilder,
@@ -36,7 +35,7 @@ export class UserPageComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private userService: HttpService,
+    private userService: UserService,
     private router: Router,
     private formBuilder: FormBuilder
   ) { }
