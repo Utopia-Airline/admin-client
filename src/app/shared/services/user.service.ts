@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import { environment } from '../../../environments/environment';
 import { FileSaverService } from 'ngx-filesaver';
-import { HttpService } from './http.service';
 import { Users, Roles } from '../types';
-import { RouterLinkWithHref } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,21 +14,37 @@ export class UserService {
 
 
   constructor(
-    private httpService: HttpService,
+    private http: HttpClient,
     private fileSaverService: FileSaverService
   ) { }
 
-    getCSVRow(user: any): any {
-      const row = {
-        id: user.id,
-        'User Name': user.username ?? '',
-        'First Name': user.givenName ?? '',
-        'Last Name': user.familyName ?? '',
-        Email: user.email ?? '',
-        Phone: user.phone ?? '',
-        Role: user.role.name ?? ''
-      };
-      return row;
+
+  get(url: string): Observable<object> {
+    return this.http.get(url);
+  }
+
+  post(url: string, payload: object): Observable<object> {
+    return this.http.post(url, payload);
+  }
+
+  update(url: string, payload: object): Observable<object> {
+    return this.http.put(url, payload);
+  }
+
+  delete(url: string): Observable<object> {
+    return this.http.delete(url);
+  }
+  getCSVRow(user: any): any {
+    const row = {
+      id: user.id,
+      'User Name': user.username ?? '',
+      'First Name': user.givenName ?? '',
+      'Last Name': user.familyName ?? '',
+      Email: user.email ?? '',
+      Phone: user.phone ?? '',
+      Role: user.role.name ?? ''
+    };
+    return row;
   }
 
   saveUsersAsCSV(users: any[]): void {
@@ -38,7 +52,7 @@ export class UserService {
     const csv = users.map(user => Object.values(this.getCSVRow(user)).join(','));
     csv.unshift(header);
     const csvList = csv.join('\n');
-    const blob = new Blob([csvList], {type: 'text/csv;charset=utf-8'});
-    this.fileSaverService.save(blob, 'user_data.csv', 'csv', {autoBom: false});
+    const blob = new Blob([csvList], { type: 'text/csv;charset=utf-8' });
+    this.fileSaverService.save(blob, 'user_data.csv', 'csv', { autoBom: false });
   }
 }
