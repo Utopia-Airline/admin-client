@@ -30,6 +30,7 @@ export class FlightsComponent implements OnInit {
   }
 
   loadFlights(): void {
+    this.flights.state = 'pending';
     this.flightService.getAll({
       ...this.filter,
       offset: (this.pageNum - 1) * FlightsComponent.PAGE_SIZE,
