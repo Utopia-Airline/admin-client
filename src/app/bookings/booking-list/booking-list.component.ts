@@ -21,6 +21,7 @@ export class BookingListComponent implements OnInit {
   limit = 10;
   filter: BookingFilter;
   error = {isError: false, message: '', status: null};
+  activeError = false;
 
   constructor(private bookingService: BookingService, private  pagerService: PagerService,
               private activatedRoute: ActivatedRoute, private router: Router) {
@@ -43,10 +44,12 @@ export class BookingListComponent implements OnInit {
           });
         });
         this.error.isError = false;
+        this.activeError = false;
         // failure or no result
         if (!bookings || bookings.length === 0) {
           // this.error = {isError: true, message: 'No Booking found', status: null};
           this.error.isError = true;
+          this.activeError = true;
           this.error.message = 'No Booking Found';
           this.totalBookings = this.bookingService.totalBookings;
         } else {
@@ -58,6 +61,7 @@ export class BookingListComponent implements OnInit {
       }, error => {
         this.loading = false;
         this.error = {isError: true, message: 'No Booking Found', status: null};
+        this.activeError = true;
         console.log(error);
       }, () => {
         this.loading = false;
@@ -187,4 +191,5 @@ export class BookingListComponent implements OnInit {
         console.log('something went wrong generating CSV', error);
       });
   }
+
 }

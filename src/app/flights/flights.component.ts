@@ -16,7 +16,8 @@ export class FlightsComponent implements OnInit {
     error?: any;
     data?: PaginatedFlightResult;
   };
-
+  isError = false;
+  errorMessage: string;
   filter: FlightFilter = {};
 
   constructor(private flightService: FlightService) {
@@ -51,6 +52,8 @@ export class FlightsComponent implements OnInit {
           state: 'error',
           error
         };
+        this.isError = true;
+        this.errorMessage = 'No Flights Found';
         console.log('flight error:', error, this.flights);
       },
     );
@@ -88,6 +91,8 @@ export class FlightsComponent implements OnInit {
         this.flightService.saveFlightsAsCSV(data.results);
       },
       (error) => {
+        this.isError = true;
+        this.errorMessage = 'Something went wrong generating CSV';
         console.log('something went wrong generating CSV', error);
       },
     );
