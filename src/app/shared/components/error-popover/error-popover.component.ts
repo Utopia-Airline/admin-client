@@ -14,7 +14,6 @@ export class ErrorPopoverComponent implements OnInit {
   constructor() {
   }
 
-
   ngOnInit(): void {
   }
 

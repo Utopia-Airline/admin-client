@@ -189,7 +189,8 @@ export class BookingListComponent implements OnInit {
         this.bookingService.saveBookingsAsCSV(bookings);
       }, error => {
         console.log('something went wrong generating CSV', error);
+        this.activeError = true;
+        this.error.message = 'Something went wrong generating CSV';
       });
   }
-
 }
