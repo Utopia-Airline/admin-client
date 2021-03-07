@@ -85,15 +85,15 @@ export class BookingComponent implements OnInit {
       const passengerForm = this.fb.group({
         id: passenger?.id,
         name: this.fb.group({
-          given: [passenger?.name.given, [Validators.required, Validators.minLength(3)]],
-          family: [passenger?.name.family, [Validators.required, Validators.minLength(3)]],
+          given: [passenger?.name.given, [Validators.required, Validators.minLength(2)]],
+          family: [passenger?.name.family, [Validators.required, Validators.minLength(2)]],
         }),
         dob: [formatDate(passenger?.dob, 'yyyy-MM-dd', 'en', 'UTC'),
           [Validators.required]],
         gender: [{
           value: this.getPassengerGender(passenger?.gender),
           disabled: true
-        }, [Validators.required, Validators.minLength(3)]],
+        }, [Validators.required]],
         address: [passenger?.address, [Validators.required, Validators.minLength(7)]],
         editable: false,
         loading: false,
