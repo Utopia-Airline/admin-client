@@ -42,6 +42,8 @@ import { PaginationComponent } from './shared/components/pagination/pagination.c
 import { BookingSearchFormComponent } from './bookings/booking-search-form/booking-search-form.component';
 import { FileSaverModule } from 'ngx-filesaver';
 import { ErrorPopoverComponent } from './shared/components/error-popover/error-popover.component';
+import { UserCreationComponent } from './users/user-creation/user-creation.component';
+import { UserService } from './shared/services/user.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,8 @@ import { ErrorPopoverComponent } from './shared/components/error-popover/error-p
     FlightResultItemComponent,
     PaginationComponent,
     BookingSearchFormComponent,
-    ErrorPopoverComponent
+    ErrorPopoverComponent,
+    UserCreationComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +90,7 @@ import { ErrorPopoverComponent } from './shared/components/error-popover/error-p
   ],
   providers: [
     HttpService,
+    UserService,
     BookingService,
     FlightService,
     AuthService,
