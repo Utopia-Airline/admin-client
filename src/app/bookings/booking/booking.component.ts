@@ -3,8 +3,9 @@ import {ActivatedRoute} from '@angular/router';
 import {Booking} from '../../shared/models/booking';
 import {BookingService} from '../../shared/services/booking.service';
 import {environment} from '../../../environments/environment';
-import {FormGroup, FormBuilder, Validators, AbstractControl, FormArray, FormControl} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Passenger} from '../../shared/models/passenger';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-booking',
@@ -87,9 +88,13 @@ export class BookingComponent implements OnInit {
           given: [passenger?.name.given, [Validators.required, Validators.minLength(3)]],
           family: [passenger?.name.family, [Validators.required, Validators.minLength(3)]],
         }),
-        dob: [passenger?.dob, [Validators.required, Validators.minLength(3)]],
-        gender: [passenger?.gender, [Validators.required, Validators.minLength(3)]],
-        address: [passenger?.address, [Validators.required, Validators.minLength(3)]],
+        dob: [formatDate(passenger?.dob, 'yyyy-MM-dd', 'en', 'UTC'),
+          [Validators.required]],
+        gender: [{
+          value: this.getPassengerGender(passenger?.gender),
+          disabled: true
+        }, [Validators.required, Validators.minLength(3)]],
+        address: [passenger?.address, [Validators.required, Validators.minLength(7)]],
         editable: false,
         loading: false,
         error: false
@@ -106,23 +111,25 @@ export class BookingComponent implements OnInit {
     return this.bForm.get('passengers') as FormArray;
   }
 
-  updatePassengerForm(i: number, passenger: Passenger): AbstractControl {
+  revertPassengerForm(i: number, passenger: Passenger): void {
     const passengerForm = this.getPassengersForms().at(i);
-    const newPassengerForm = this.fb.group({
-      id: passenger?.id,
-      name: this.fb.group({
-        given: [passenger?.name.given, [Validators.required, Validators.minLength(3)]],
-        family: [passenger?.name.family, [Validators.required, Validators.minLength(3)]],
-      }),
-      dob: [passenger?.dob, [Validators.required, Validators.minLength(5)]],
-      gender: [passenger?.gender, [Validators.required, Validators.minLength(4)]],
-      address: [passenger?.address, [Validators.required, Validators.minLength(5)]],
-      editable: true,
-      loading: false,
-      error: false
+    passengerForm.patchValue({
+      name:
+        {given: passenger?.name.given, family: passenger?.name.family},
+      dob: formatDate(passenger?.dob, 'yyyy-MM-dd', 'en', 'UTC'),
+      gender: this.getPassengerGender(passenger?.gender),
+      address: passenger?.address
     });
-    passengerForm.patchValue(newPassengerForm.value);
-    return passengerForm;
+  }
+
+  getPassengerGender(gender: string): string {
+    if (gender.toLowerCase() === 'male') {
+      return 'Male';
+    } else if (gender.toLowerCase() === 'female') {
+      return 'Female';
+    } else {
+      return 'Other';
+    }
   }
 
   getFlightsForms(): FormArray {
@@ -157,15 +164,17 @@ export class BookingComponent implements OnInit {
   }
 
   toggleEdit(i: number): void {
-    const editable = (this.bForm.get('passengers') as FormArray).at(i).get('editable');
+    const passenger = (this.bForm.get('passengers') as FormArray).at(i);
+    const gender = passenger.get('gender');
+    const editable = passenger.get('editable');
     editable.patchValue(!editable.value);
+    (gender.disabled) ? gender.enable() : gender.disable();
     // this.booking.passengers[i].editable = !this.booking.passengers[i].editable;
   }
 
   updatePassenger(i: number): void {
     if (this.bForm.valid) {
       this.getPassengersForms().at(i).get('loading').setValue(true);
-      console.log('Is valid');
       const passenger: Passenger = new Passenger(this.bForm.value.passengers[i]);
       passenger.dropEditable();
       console.log('passenger:', passenger);
@@ -187,8 +196,7 @@ export class BookingComponent implements OnInit {
   }
 
   cancelEdit(i: number): void {
-    const p = this.updatePassengerForm(i, this.booking.passengers[i]);
-    // console.log('bform passenger', p.value);
+    this.revertPassengerForm(i, this.booking.passengers[i]);
     this.toggleEdit(i);
   }
 }
