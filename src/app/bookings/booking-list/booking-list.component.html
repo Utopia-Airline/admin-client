@@ -91,5 +91,6 @@
 
   <!--Acknowledgment-->
   <app-spinner [loading]="loading" *ngIf="loading"></app-spinner>
-  <app-error-message *ngIf="error?.isError" [error]="error"></app-error-message>
+  <app-error-popover [(show)]="activeError" [message]="error.message"></app-error-popover>
+  <!--  <app-error-message *ngIf="error?.isError" [error]="error"></app-error-message>-->
 </div>

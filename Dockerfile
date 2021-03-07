@@ -1,3 +1,4 @@
+# usage  docker run --rm -it -p 80:80 --env API_HOST=utopiaalb-1438711635.us-east-1.elb.amazonaws.com adminportal
 FROM node:14.15.2-alpine3.12 AS angular_builder
 # change destination working directory to /user/src/app
 WORKDIR /user/src/app

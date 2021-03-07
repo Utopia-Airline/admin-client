@@ -41,6 +41,7 @@ import {DatePipe} from '@angular/common';
 import {PaginationComponent} from './shared/components/pagination/pagination.component';
 import {BookingSearchFormComponent} from './bookings/booking-search-form/booking-search-form.component';
 import {FileSaverModule} from 'ngx-filesaver';
+import { ErrorPopoverComponent } from './shared/components/error-popover/error-popover.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import {FileSaverModule} from 'ngx-filesaver';
     PhonePipe,
     FlightResultItemComponent,
     PaginationComponent,
-    BookingSearchFormComponent
+    BookingSearchFormComponent,
+    ErrorPopoverComponent
   ],
   imports: [
     BrowserModule,
