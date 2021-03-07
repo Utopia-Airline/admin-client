@@ -115,13 +115,17 @@
           <div class="d-flex">
             <div class="m-2 flex-fill">
               <div class="title">DOB</div>
-              <input class="gray-box my-1" [class.gray-box-input]="editable.value ==='true'"
+              <input class="gray-box my-1" type="date" [class.gray-box-input]="editable.value ==='true'"
                      formControlName="dob" [readOnly]="editable.value ==='false'">
             </div>
             <div class="m-2 flex-fill">
               <div class="title">GENDER</div>
-              <input class="gray-box my-1" [class.gray-box-input]="editable.value ==='true'"
-                     formControlName="gender" [readOnly]="editable.value ==='false'">
+              <select class="gray-box my-1" [class.gray-box-input]="editable.value ==='true'"
+                      formControlName="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
             </div>
           </div>
           <div class="d-flex">
