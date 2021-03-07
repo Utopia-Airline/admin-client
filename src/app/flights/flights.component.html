@@ -1,13 +1,14 @@
 <main class="container">
-  <div class="d-flex justify-content-center">
+  <!-- <div class="d-flex justify-content-center">
     <button class="btn btn-dark btn-lg btn-block m-5" type="button" data-toggle="modal"
             data-target="#flight-creation-modal">
       ADD FLIGHT
     </button>
-  </div>
+  </div> -->
   <app-flight-creation-modal></app-flight-creation-modal>
   <app-flight-search-form (filterChanged)="onFilterChange($event)"></app-flight-search-form>
-  <app-spinner *ngIf="flights.state==='pending'"></app-spinner>
+  <app-spinner [loading]="true" *ngIf="flights.state==='pending'"></app-spinner>
+  <app-error-popover [(show)]="isError" [message]="errorMessage"></app-error-popover>
   <ng-container *ngIf="flights.state==='done'">
     <button class="btn btn-dark my-4" (click)="onSaveCSV()">Generate a CSV report</button>
     <app-flight-result-list [flights]="flights.data.results"></app-flight-result-list>
