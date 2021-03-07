@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../environments/environment';
-import { HttpService } from '../shared/services/http.service';
-import { AuthService } from '../shared/services/auth.service';
-import { User } from '../shared/models/user';
+import { environment } from '../../../environments/environment';
+import { HttpService } from '../../shared/services/http.service';
+import { AuthService } from '../../shared/services/auth.service';
+import { User } from '../../shared/models/user';
 import {
   FormGroup,
   FormBuilder,

@@ -4,16 +4,16 @@ import {
   FormBuilder,
   Validators
 } from '@angular/forms';
-import { environment } from '../../environments/environment';
-import { HttpService } from '../shared/services/http.service';
-import { UserService } from '../shared/services/user.service';
+import { environment } from '../../../environments/environment';
+import { HttpService } from '../../shared/services/http.service';
+import { UserService } from '../../shared/services/user.service';
 
-import { PagerService } from '../shared/services/pager.service';
+import { PagerService } from '../../shared/services/pager.service';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss']
 })
 export class UsersComponent implements OnInit {
   page = 1;
