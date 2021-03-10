@@ -51,7 +51,7 @@ export class UserCreationComponent implements OnInit {
     if (this.addUserForm.valid) {
       this.userService.post(this.apiUrl, this.addUserForm.value).subscribe((res) => {
         this.isError = false;
-        this.router.navigate;
+        this.router.navigateByUrl("/users");
       }, (err) => {
         this.isError = true;
         this.error = err?.error?.message;
