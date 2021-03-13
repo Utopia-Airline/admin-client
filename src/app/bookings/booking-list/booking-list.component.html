@@ -30,14 +30,14 @@
             <!--            <hr class="my-4">-->
             <div class="d-flex booker mt-3 p-2" *ngIf="booking.type ==='USER'">
               <div class="m-1">Booker info:</div>
-              <div class="m-1">{{booking.user?.name.given}}</div>
-              <div class="m-1">{{booking.user?.name.family}}</div>
+              <div class="m-1">{{booking.user?.givenName}}</div>
+              <div class="m-1">{{booking.user?.familyName}}</div>
               <div class="ml-auto m-1">{{booking.type}} </div>
             </div>
             <div class="d-flex booker mt-3 p-2" *ngIf="booking.type ==='GUEST'">
               <div class="m-1">Booker info:</div>
-              <div class="m-1">{{booking.guest?.email}}</div>
-              <div class="m-1">{{booking.guest?.phone | phone }}</div>
+              <div class="m-1">{{booking.guest?.contactEmail}}</div>
+              <div class="m-1">{{booking.guest?.contactPhone | phone }}</div>
               <div class="ml-auto m-1">{{booking.type}} </div>
             </div>
             <div class="d-flex">

@@ -21,13 +21,11 @@ type Flight = {
   };
   departureTime: Date;
   arrivalTime?: Date;
-  seats: {
-    total: number;
-    reserved: number;
-    booked: number;
-    available: number;
-    price: number;
-  }
+  totalSeats?: number;
+  reservedSeats?: number;
+  bookedSeats?: number;
+  availableSeats?: number;
+  seatPrice?: number;
 };
 
 type User = {
@@ -38,10 +36,7 @@ type User = {
   familyName: string;
   email: string;
   phone: string;
-  name: {
-    given: string;
-    family: string;
-  };
+  role: string
 };
 
 export class Booking implements Deserializable {
@@ -54,6 +49,7 @@ export class Booking implements Deserializable {
   isActive: boolean;
   // "USER" | "GUEST"
   type: string;
+  confirmationCode: string;
   agent?: User;
   user?: User;
   guest?: GuestContact;

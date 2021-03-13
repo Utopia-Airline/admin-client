@@ -85,8 +85,8 @@ export class BookingComponent implements OnInit {
       const passengerForm = this.fb.group({
         id: passenger?.id,
         name: this.fb.group({
-          given: [passenger?.name.given, [Validators.required, Validators.minLength(2)]],
-          family: [passenger?.name.family, [Validators.required, Validators.minLength(2)]],
+          given: [passenger?.givenName, [Validators.required, Validators.minLength(2)]],
+          family: [passenger?.familyName, [Validators.required, Validators.minLength(2)]],
         }),
         dob: [formatDate(passenger?.dob, 'yyyy-MM-dd', 'en', 'UTC'),
           [Validators.required]],
@@ -115,7 +115,7 @@ export class BookingComponent implements OnInit {
     const passengerForm = this.getPassengersForms().at(i);
     passengerForm.patchValue({
       name:
-        {given: passenger?.name.given, family: passenger?.name.family},
+        {given: passenger?.givenName, family: passenger?.familyName},
       dob: formatDate(passenger?.dob, 'yyyy-MM-dd', 'en', 'UTC'),
       gender: this.getPassengerGender(passenger?.gender),
       address: passenger?.address
