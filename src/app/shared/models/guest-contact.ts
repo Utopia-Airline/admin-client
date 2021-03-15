@@ -1,8 +1,8 @@
 import {Deserializable} from './Deserializable';
 
 export class GuestContact implements Deserializable {
-  email: string;
-  phone: string;
+  contactEmail: string;
+  contactPhone: string;
 
   deserialize(input: any): this {
     Object.assign(this, input);

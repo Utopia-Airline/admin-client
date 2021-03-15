@@ -21,6 +21,7 @@ export class BookingListComponent implements OnInit {
   limit = 10;
   filter: BookingFilter;
   error = {isError: false, message: '', status: null};
+  activeError = false;
 
   constructor(private bookingService: BookingService, private  pagerService: PagerService,
               private activatedRoute: ActivatedRoute, private router: Router) {
@@ -36,28 +37,32 @@ export class BookingListComponent implements OnInit {
         bookings.forEach(booking => {
           booking.totalPrice = 0;
           booking?.flights.forEach(flight => {
-            booking.totalPrice += flight.seats.price;
+            booking.totalPrice += flight.seatPrice;
             flight.departureTime = new Date(flight.departureTime);
             flight.arrivalTime = new Date(flight.departureTime);
             flight.arrivalTime.setHours(Math.random() * 8 + 2 + flight.arrivalTime.getHours());
           });
         });
         this.error.isError = false;
+        this.activeError = false;
         // failure or no result
         if (!bookings || bookings.length === 0) {
           // this.error = {isError: true, message: 'No Booking found', status: null};
           this.error.isError = true;
+          this.activeError = true;
           this.error.message = 'No Booking Found';
           this.totalBookings = this.bookingService.totalBookings;
         } else {
           this.bookings = bookings;
           this.totalBookings = this.bookingService.totalBookings;
+          this.limit = this.bookingService.limit;
           this.setPage(this.page);
         }
         this.loading = false;
       }, error => {
         this.loading = false;
         this.error = {isError: true, message: 'No Booking Found', status: null};
+        this.activeError = true;
         console.log(error);
       }, () => {
         this.loading = false;
@@ -141,9 +146,10 @@ export class BookingListComponent implements OnInit {
   }
 
   private buildUrl(page: number, limit: number): string {
-    const offset = (page - 1) * limit;
-    const type = (this.filter?.type && this.filter?.type !== 'ALL') ? `/${this.filter?.type}/` : '';
-    let url = `${environment.bookingApiUrl}${type}?offset=${offset}`;
+    // const offset = (page - 1) * limit;
+    // const type = (this.filter?.type && this.filter?.type !== 'ALL') ? `/${this.filter?.type}` : '';
+    // let url = `${environment.bookingApiUrl}${type}?page=${page - 1}`;
+    let url = `${environment.bookingApiUrl}?page=${page - 1}`;
     if (this.filter) {
       for (const [key, value] of Object.entries(this.filter)) {
         if (value) {
@@ -167,6 +173,8 @@ export class BookingListComponent implements OnInit {
     let url = this.buildUrl(1, this.totalBookings);
     if (!url.includes('limit')) {
       url += `&limit=${this.totalBookings}`;
+    } else {
+      url = url.replace(/&limit=(\d+)/g, `&limit=${this.totalBookings}`);
     }
     console.log('url:', url);
     this.bookingService.getAllBookings(url)
@@ -174,7 +182,7 @@ export class BookingListComponent implements OnInit {
         bookings.forEach(booking => {
           booking.totalPrice = 0;
           booking?.flights.forEach(flight => {
-            booking.totalPrice += flight.seats.price;
+            booking.totalPrice += flight.seatPrice;
             flight.departureTime = new Date(flight.departureTime);
             flight.arrivalTime = new Date(flight.departureTime);
             flight.arrivalTime.setHours(Math.random() * 8 + 2 + flight.arrivalTime.getHours());
@@ -183,6 +191,8 @@ export class BookingListComponent implements OnInit {
         this.bookingService.saveBookingsAsCSV(bookings);
       }, error => {
         console.log('something went wrong generating CSV', error);
+        this.activeError = true;
+        this.error.message = 'Something went wrong generating CSV';
       });
   }
 }

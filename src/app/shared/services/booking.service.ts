@@ -5,11 +5,7 @@ import {catchError, map} from 'rxjs/operators';
 import {Booking} from '../models/booking';
 import {Passenger} from '../models/passenger';
 import {FileSaverService} from 'ngx-filesaver';
-
-type BookingJson = {
-  rows: Booking[];
-  count: number;
-};
+import {Pagination} from '../models/pagination';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +18,14 @@ export class BookingService {
   }
 
   totalBookings: number;
+  limit: number;
 
   getAllBookings(url: string): Observable<Booking []> {
-    return this.http.get<BookingJson>(url).pipe(
+    return this.http.get<Pagination<Booking>>(url).pipe(
       map(rdata => {
-        this.totalBookings = rdata.count;
-        return rdata.rows.map(data => new Booking().deserialize(data));
+        this.totalBookings = rdata.totalElements;
+        this.limit = rdata.size;
+        return rdata.content.map(data => new Booking().deserialize(data));
       }), catchError(err => {
         console.log('pipe error');
         this.hasError = true;
@@ -70,18 +68,18 @@ export class BookingService {
     if (booking) {
       ({id, totalPrice, flights, passengers, type, guest, agent, user, isActive} = booking);
       if (guest) {
-        ({phone: guestPhone, email: guestEmail} = guest);
+        ({contactPhone: guestPhone, contactEmail: guestEmail} = guest);
       }
       if (agent) {
         ({
           id: agentId, phone: agentPhone, email: agentEmail,
-          username: agentUsername, name: {given: agentGivenName, family: agentFamilyName}
+          username: agentUsername, givenName: agentGivenName, familyName: agentFamilyName
         } = agent);
       }
       if (user) {
         ({
           id: userId, phone: userPhone, email: userEmail,
-          username: userUsername, name: {given: userGivenName, family: userFamilyName}
+          username: userUsername, givenName: userGivenName, familyName: userFamilyName
         } = user);
       }
       flightIds = flights?.map(flight => flight.id).join(' | ');
@@ -94,14 +92,14 @@ export class BookingService {
       'Total Price': totalPrice ?? '',
       'User Id': userId ?? '',
       'User username': userUsername ?? '',
-      'User Given Name': userGivenName ?? '',
-      'User Family Name': userFamilyName ?? '',
+      'User GivenName': userGivenName ?? '',
+      'User FamilyName': userFamilyName ?? '',
       'User Email': userEmail ?? '',
       'User Phone': userPhone ?? '',
       'Agent Id': agentId ?? '',
       'Agent username': agentUsername ?? '',
-      'Agent Given Name': agentGivenName ?? '',
-      'Agent Family Name': agentFamilyName ?? '',
+      'Agent GivenName': agentGivenName ?? '',
+      'Agent FamilyName': agentFamilyName ?? '',
       'Agent Email': agentEmail ?? '',
       'Agent Phone': agentPhone ?? '',
       'Guest Email': guestEmail ?? '',

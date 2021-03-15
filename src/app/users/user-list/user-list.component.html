@@ -1,0 +1,53 @@
+<div *ngIf="users" class="container full-page my-4">
+
+    <div *ngIf="isError && error.message.includes('search')">
+        <p style="color:red; text-align: center;">{{ error.message }}</p>
+    </div>
+    <div class=" row">
+        <input class="col-md form-control m-1" type="Username" [(ngModel)]="usernameFilter" placeholder="Username">
+        <input class="col-md form-control m-1 justify-content-center" type="Email" [(ngModel)]="emailFilter"
+            placeholder="Email">
+        <select class="col-md form-control m-1" type="role" id="role" [(ngModel)]="roleFilter">
+            <option value="CUSTOMER">CUSTOMER</option>
+            <option value="AGENT">AGENT</option>
+            <option value="ADMIN">ADMIN</option>
+        </select>
+        <button class="btn btn-dark m-1" (click)="searchUsers(usernameFilter, emailFilter, roleFilter)">Search</button>
+        <button class="btn btn-dark m-1" *ngIf="isSearching" (click)="cancelSearch()">Clear</button>
+    </div>
+    <div class="row">
+        <button class="btn btn-dark my-2" (click)="onSaveCSVFile()">Download User CSV file</button>
+        <button class="btn btn-dark my-2" id="AddUser" routerLink="/users/add">Add User</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td (click)="sortBy('username')">Username</td>
+                    <td (click)="sortBy('givenName')">Given Name</td>
+                    <td (click)="sortBy('familyName')">Family Name</td>
+                    <td (click)="sortBy('role')">Role</td>
+                    <td (click)="sortBy('email')">Email</td>
+                    <td (click)="sortBy('phone')">Phone Number</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users; let i=index" routerLink="/users/{{ user.id }}">
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.givenName }}</td>
+                    <td>{{ user.familyName }}</td>
+                    <td>{{ user.role.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone | phone}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center" style="margin: 150px">
+        <app-pagination *ngIf="pager.totalPages && pager.currentPage" [(currentPage)]="pager.currentPage"
+            [(totalPageCount)]="pager.totalPages" [displayedPageRange]="5" (currentPageChange)="navigate($event)">
+        </app-pagination>
+    </div>
+</div>
+<app-spinner *ngIf="!users && !isError"></app-spinner>
+<app-error-message *ngIf="!users && isError" [error]="error"></app-error-message>

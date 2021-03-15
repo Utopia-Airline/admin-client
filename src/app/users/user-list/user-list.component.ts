@@ -4,16 +4,15 @@ import {
   FormBuilder,
   Validators
 } from '@angular/forms';
-import { environment } from '../../environments/environment';
-import { HttpService } from '../shared/services/http.service';
-import { UserService } from '../shared/services/user.service';
+import { environment } from '../../../environments/environment';
+import { UserService } from '../../shared/services/user.service';
 
-import { PagerService } from '../shared/services/pager.service';
+import { PagerService } from '../../shared/services/pager.service';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss']
 })
 export class UsersComponent implements OnInit {
   page = 1;
@@ -22,14 +21,6 @@ export class UsersComponent implements OnInit {
   pager: any = {};
   result: any;
   users: any;
-  addUserForm: FormGroup;
-  username: string;
-  password: string;
-  givenName: string;
-  familyName: string;
-  email: string;
-  phone: string;
-  role: string;
   apiUrl: string;
   isError: boolean;
   error: any;
@@ -39,8 +30,6 @@ export class UsersComponent implements OnInit {
   order: boolean;
 
   constructor(
-    private httpService: HttpService,
-    private formBuilder: FormBuilder,
     private userService: UserService,
     private pagerService: PagerService,
   ) { }
@@ -52,7 +41,6 @@ export class UsersComponent implements OnInit {
     this.currentSorting = '&sort=username&order=asc';
     this.order = true;
     this.initializeUsers();
-    this.initializeForm();
   }
 
   setPage(page: number): void {
@@ -60,26 +48,24 @@ export class UsersComponent implements OnInit {
       return;
     }
     this.pager = this.pagerService.getPager(this.totalUsers, page, this.limit);
-    console.log('pager server:', this.pager);
-    console.log('paged users', this.users);
   }
 
   navigate(page: number): void {
-    // if (page < 1 || page > this.totalUsers / this.limit) {
-    //   this.isError = true;
-    //   this.error = {
-    //     message: "invalid page"
-    //   };
-    //   return;
-    // }
+    if (page < 1 || page > Math.ceil(this.totalUsers / this.limit)) {
+      this.isError = true;
+      this.error = {
+        message: "invalid page"
+      };
+      return;
+    }
     this.page = page;
     this.initializeUsers();
   }
 
   initializeUsers(): void {
     const offset = this.page - 1;
-    console.log(this.apiUrl + '?offset=' + offset.toString() + '&limit=' + this.limit.toString() + this.currentSorting + this.searchUrl);
-    this.httpService
+    // console.log(this.apiUrl + '?offset=' + offset.toString() + '&limit=' + this.limit.toString() + this.currentSorting + this.searchUrl);
+    this.userService
       .get(this.apiUrl + '?offset=' + offset.toString() + '&limit=' + this.limit.toString() + this.currentSorting + this.searchUrl)
       .subscribe((res) => {
         this.isError = false;
@@ -147,31 +133,8 @@ export class UsersComponent implements OnInit {
     this.initializeUsers();
   }
 
-  initializeForm(): void {
-    this.addUserForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      givenName: ['', Validators.required],
-      familyName: ['', Validators.required],
-      email: ['', Validators.required],
-      phone: ['', Validators.required],
-      role: ['', Validators.required],
-    });
-  }
-
-  addUser(): void {
-    this.httpService.post(this.apiUrl, this.addUserForm.value).subscribe((res) => {
-      this.isError = false;
-      this.initializeUsers();
-      this.initializeForm();
-    }, (err) => {
-      this.isError = true;
-      this.error = err.error;
-    });
-  }
-
   onSaveCSVFile(): void {
-    this.httpService.get(environment.userApiUrl + '?sort=username').subscribe((res) => {
+    this.userService.get(environment.userApiUrl + '?sort=username').subscribe((res) => {
       let list: any;
       list = res;
       this.userService.saveUsersAsCSV(list.content);

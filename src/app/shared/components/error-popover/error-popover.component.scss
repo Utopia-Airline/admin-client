@@ -1,0 +1,27 @@
+.error-popover {
+  position  : fixed;
+  bottom    : 0;
+  right     : -550px;
+  margin    : 10px;
+  z-index   : 2;
+  max-width : 500px;
+}
+
+.show-popover {
+  animation : slide-in 1s forwards;
+}
+
+.hide-popover {
+  animation : slide-out 1s forwards;
+}
+
+
+@keyframes slide-in {
+  0% {right : -550px}
+  100% {right : 0}
+}
+
+@keyframes slide-out {
+  0% {right : 0}
+  100% {right : -550px}
+}

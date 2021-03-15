@@ -26,7 +26,7 @@
   <!--  booker information-->
   <div class="my-3" *ngIf="booking.user">
     <div>Booked for USER:
-      <span class="font-weight-bold">{{booking?.user.name.given}} {{booking?.user.name.family}}</span>
+      <span class="font-weight-bold">{{booking?.user.givenName}} {{booking?.user.familyName}}</span>
     </div>
     <div class="mt-2">
       Email: <span class="font-weight-bold">{{booking?.user.email}}</span>
@@ -36,13 +36,13 @@
   <div class="my-3" *ngIf="booking.guest">
     <div>Booked for GUEST:</div>
     <div class="mt-2">
-      Email: <span class="font-weight-bold">{{booking?.guest.email}}</span>
-      , Phone: <span class="font-weight-bold">{{booking?.guest.phone | phone}}</span>
+      Email: <span class="font-weight-bold">{{booking?.guest.contactEmail}}</span>
+      , Phone: <span class="font-weight-bold">{{booking?.guest.contactPhone | phone}}</span>
     </div>
   </div>
   <div class="my-3" *ngIf="booking.agent">
     <div>Booked by AGENT:
-      <span class="font-weight-bold">{{booking?.agent.name.given}} {{booking?.agent.name.family}}</span>
+      <span class="font-weight-bold">{{booking?.agent.givenName}} {{booking?.agent.familyName}}</span>
     </div>
     <div class="mt-2">
       Email: <span class="font-weight-bold">{{booking?.agent.email}}</span>
@@ -115,13 +115,17 @@
           <div class="d-flex">
             <div class="m-2 flex-fill">
               <div class="title">DOB</div>
-              <input class="gray-box my-1" [class.gray-box-input]="editable.value ==='true'"
+              <input class="gray-box my-1" type="date" [class.gray-box-input]="editable.value ==='true'"
                      formControlName="dob" [readOnly]="editable.value ==='false'">
             </div>
             <div class="m-2 flex-fill">
               <div class="title">GENDER</div>
-              <input class="gray-box my-1" [class.gray-box-input]="editable.value ==='true'"
-                     formControlName="gender" [readOnly]="editable.value ==='false'">
+              <select class="gray-box my-1" [class.gray-box-input]="editable.value ==='true'"
+                      formControlName="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
             </div>
           </div>
           <div class="d-flex">
