@@ -13,6 +13,7 @@ import { HomeUserComponent } from './layout/home-user/home-user.component';
 import { LoginActivateService } from './shared/services/login-activate.service';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { UserCreationComponent } from './users/user-creation/user-creation.component';
+import {CustomerServicePageComponent} from './customer-service/customer-service-page/customer-service-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeUserComponent, canActivate: [LoginActivateService] },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'users/add', component: UserCreationComponent, canActivate: [LoginActivateService] },
   { path: 'users/:id', component: UserPageComponent, canActivate: [LoginActivateService] },
   { path: 'flights', component: FlightsComponent, canActivate: [LoginActivateService] },
+  { path: 'customer-service', component: CustomerServicePageComponent, canActivate: [LoginActivateService] },
   { path: '**', component: NotFoundComponent, canActivate: [LoginActivateService] }
 ];
 

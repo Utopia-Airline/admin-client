@@ -1,0 +1,11 @@
+.chat-form {
+  position         : relative;
+  display          : flex;
+  flex-direction   : row;
+  align-items      : center;
+}
+
+.commandbar {
+  padding    : 10px;
+  text-align : right;
+}

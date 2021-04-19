@@ -22,5 +22,10 @@
   "/api/flights": {
     "target": "http://localhost:3001/",
     "secure": false
+  },
+  "/secured/room": {
+    "target": "http://localhost:8082/",
+    "secure": false,
+    "ws": true
   }
 }

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
 import {AuthService} from '../../../shared/services/auth.service';
 import {Router} from '@angular/router';
+import {Location} from '@angular/common';
 
 type User = {
   username: string;
@@ -21,7 +21,7 @@ export class LoginFormComponent implements OnInit {
   user: User = {username: '', password: '', firstname: ''};
 
   constructor(public authService: AuthService,
-              private router: Router) {
+              private router: Router, private location: Location) {
   }
 
   login(): void {
@@ -31,7 +31,11 @@ export class LoginFormComponent implements OnInit {
         console.log(res);
         this.authService.error = false;
         this.authService.isLoggedIn = true;
-        this.router.navigate(['']).then(() => console.log('redirect to dashboard'));
+        if (window.history.length > 2) {
+          this.location.back();
+        } else {
+          this.router.navigate(['/']).then(() => console.log('navigated', window.history));
+        }
       }, error => {
         this.authService.error = true;
         this.authService.isLoggedIn = false;
