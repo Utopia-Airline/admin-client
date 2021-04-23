@@ -1,0 +1,27 @@
+<div style="padding-left: 300px">
+  <div style="color: #8f9ea8" class="text-muted"
+       *ngIf="chatService.isTyping">
+    user is typing...
+  </div>
+  <form class="chat-form">
+    <mat-form-field appearance="outline"
+                    style="flex: 1; margin-top: 10px;">
+      <!--     <textarea matInput placeholder="Message"-->
+      <!--               cdkTextareaAutosize-->
+      <!--               cdkAutosizeMinRows="3"-->
+      <!--               cdkAutosizeMaxRows="20"-->
+      <!--               style="width: 100%; padding: 2px" name="message" [(ngModel)]="message"-->
+      <!--               (keyup)="handleEnter($event)"></textarea>-->
+      <input matInput placeholder="Message"
+             style="width: 100%; padding: 2px; font-size: 1.1rem" name="message" [(ngModel)]="message"
+             (keyup)="handleEnter($event)" [disabled]="!chatService.customerId"/>
+    </mat-form-field>
+    <div class="commandbar">
+      <button mat-fab color="basic" (click)="handleSend()" [disabled]="message.length <= 0">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>
+
+

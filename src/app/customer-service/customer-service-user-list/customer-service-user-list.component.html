@@ -1,0 +1,8 @@
+<mat-selection-list [multiple]="false" role="listbox">
+  <mat-list-option role="option"
+                   *ngFor="let user of chatService.activeCustomers.values()"
+                   [value]="user.senderShortName"
+                   (click)="setCustomerId(user.senderId)">
+    {{user.senderShortName}}
+  </mat-list-option>
+</mat-selection-list>

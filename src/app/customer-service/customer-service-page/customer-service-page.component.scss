@@ -1,0 +1,44 @@
+.chat-container {
+  //border : 1px solid #555;
+  position : relative;
+  display  : flex;
+}
+
+.chat-sidenav {
+  max-width : 300px;
+  width     : 300px;
+}
+
+mat-drawer {
+  //padding   : 12px;
+  padding-top    : 20px;
+  padding-bottom : 20px;
+  max-width      : 300px;
+  width          : 300px;
+}
+
+mat-drawer-content {
+  padding        : 12px;
+  display        : flex;
+  flex           : 1;
+  flex-direction : column;
+  align-items    : flex-start;
+}
+
+.message-box {
+  min-height       : 75px;
+  display          : block;
+  position         : fixed;
+  padding          : 12px;
+  bottom           : 0;
+  right            : 0;
+  left             : 0;
+
+  //width            : inherit;
+  //width: inherit;
+  //left: 250px;
+  //transform: translateX(-50%);
+  width            : 100%;
+  background-color : #424242;
+  z-index          : 2;
+}

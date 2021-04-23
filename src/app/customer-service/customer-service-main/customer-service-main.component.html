@@ -1,0 +1,11 @@
+<mat-list role="list">
+  <mat-list-item role="listitem"
+                 *ngFor="let message of chatService.chatHistory;"
+                 class="chat-bubble"
+                 [ngClass]="(message.incoming) ? 'chat-bubble--left mr-auto' : 'chat-bubble--right ml-auto'"
+                 [ngStyle]="{'background-color': message.incoming ? '#eee':'#b0d7f1'}"
+                 style="width: 40%; height: auto"
+  >
+    {{message.content}}
+  </mat-list-item>
+</mat-list>

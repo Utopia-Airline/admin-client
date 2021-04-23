@@ -1,0 +1,38 @@
+<mat-drawer-container class="chat-container full-page m-0" style="position: relative">
+  <mat-drawer #drawer mode="side" opened>
+    <app-customer-service-user-list></app-customer-service-user-list>
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <!--    <div class="commandbar">-->
+    <!--      <button mat-raised-button color="basic" (click)="drawer.toggle()">toggle drawer</button>-->
+    <!--    </div>-->
+    <app-customer-service-main
+      style="width: 100%; padding: 25px 25px 155px;">
+
+    </app-customer-service-main>
+    <app-customer-service-message-box class="message-box" (send)="handleSend($event)">
+    </app-customer-service-message-box>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<!--<mat-sidenav-container class="chat-container full-page m-0">-->
+<!--  <mat-sidenav #drawer mode="side" opened class="chat-sidenav"-->
+<!--               fixedInViewport fixedBottomGap="0" fixedTopGap="0">-->
+<!--    <app-customer-service-user-list></app-customer-service-user-list>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+
+<!--    &lt;!&ndash;    <div class="commandbar">&ndash;&gt;-->
+<!--    &lt;!&ndash;      <button mat-raised-button color="basic" (click)="drawer.toggle()">toggle drawer</button>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    <app-customer-service-main-->
+<!--      style="width: 100%; padding: 25px 25px 100px;">-->
+
+<!--    </app-customer-service-main>-->
+<!--    <app-customer-service-message-box class="message-box" (send)="handleSend($event)">-->
+<!--    </app-customer-service-message-box>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
+
+
